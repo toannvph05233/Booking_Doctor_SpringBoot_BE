@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CheckoutDTO {
     private String result;
+    private double price;
 }

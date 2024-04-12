@@ -66,6 +66,7 @@ public class BookingController {
         if (booking.getStatus().equals("Đang khám")) {
             booking.setResult(checkoutDTO.getResult());
             booking.setStatus("Khám xong");
+            booking.setTotal(checkoutDTO.getPrice());
             bookingService.save(booking);
             return ResponseEntity.ok().build();
         } else {
