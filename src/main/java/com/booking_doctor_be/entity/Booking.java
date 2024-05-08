@@ -20,4 +20,6 @@ public class Booking {
     private Doctor doctor;
     @ManyToOne
     private Account account;
+    @ManyToOne
+    private Pet pet;
 }

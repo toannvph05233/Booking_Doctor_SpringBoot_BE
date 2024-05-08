@@ -20,6 +20,8 @@ public interface IBookingRepo extends JpaRepository<Booking, Integer> {
 
     Booking findById(int id);
 
+    List<Booking> findAllByPetId(int id);
+
     @Query(value =
             "SELECT DAY(b.startTime) AS day, " +
                     "SUM(CASE WHEN b.status = 'Khám xong' THEN b.total ELSE 0 END) AS revenue " +

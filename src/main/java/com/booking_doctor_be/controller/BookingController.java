@@ -91,6 +91,9 @@ public class BookingController {
 
     @PostMapping
     public ResponseEntity<?> bookDoctor(@RequestBody Booking booking) {
+        if (booking.getPet().getId()== 0){
+            booking.setPet(null);
+        }
         booking.setCreate_at(LocalDateTime.now());
         try {
             return ResponseEntity.ok(bookingService.bookingDoctor(booking));
